@@ -15,15 +15,12 @@ learning React and ES6 by building a Movie App.
 
 #### tv
 
-- [] latest
-- [] airing today
-- [] popular
-- [] top rating
+- [x] airing today
+- [x] popular
+- [x] top rated
 
 #### movie
 
-- [] latest
-- [] now playing
-- [] popular
-- [] top rated
-- [] upcoming
+- [x] popular
+- [x] top rated
+- [x] upcoming

@@ -23,7 +23,7 @@ const searchConfig = term => {
     ...config,
     params: {
       ...config.params,
-      query: term
+      query: encodeURIComponent(term)
     }
   };
 };
@@ -42,4 +42,4 @@ export const movie = {
   movieDetail: id => axios.get(`movie/${id}`, appendConfig),
   search: term => axios.get("search/movie", searchConfig(term))
 };
-export default movie.movieDetail(121);
+export default movie.search("hello");
