@@ -17,9 +17,10 @@ const List = styled.ul`
 
 const Item = styled.li`
   cursor: pointer;
-  padding: 10px 0;
+  padding: 10px 10px;
   border-bottom: 2px solid
     ${props => (props.current ? "#3498db" : "transparent")};
+  transition: border-bottom 0.3s linear;
   &:not(:last-child) {
     margin-right: 20px;
   }
