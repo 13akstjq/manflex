@@ -3,7 +3,8 @@ import DetailPresenter from "./DetailPresenter";
 import { async } from "q";
 import { tv, movie } from "../../Components/api";
 
-export default () => {
+export default ({ history, location, match }) => {
+  console.log(history, location, match);
   const [showDetail, setShowDetail] = useState("");
   const [movieDetail, setMovieDetail] = useState("");
   const [loading, setLoading] = useState(true);

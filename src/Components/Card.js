@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Rank = styled.div`
   position: absolute;
@@ -30,7 +31,6 @@ const ImgContainer = styled.div`
 const Wrapper = styled.div`
   display: grid;
   grid-template-rows: 8fr 1fr 1fr;
-  cursor: pointer;
 `;
 
 const Title = styled.div`
@@ -42,14 +42,16 @@ const ReleaseYear = styled.div`
   color: rgba(255, 255, 255, 0.6);
 `;
 
-const Card = ({ title, release_date, vote_average, poster_path }) => {
+const Card = ({ title, release_date, vote_average, poster_path, id }) => {
   const releaseYear = release_date.split("-");
   return (
     <Wrapper>
+      {/* <Link to={`/search/${id}`}> */}
       <ImgContainer>
         <Poster img={`https://image.tmdb.org/t/p/original/${poster_path}`} />
         <Rank>⭐️ {vote_average}</Rank>
       </ImgContainer>
+      {/* </Link> */}
       <Title>{title}</Title>
       <ReleaseYear>{releaseYear[0]}</ReleaseYear>
     </Wrapper>

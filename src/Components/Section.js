@@ -33,6 +33,7 @@ const Section = ({ title, children }) => {
           children.map(item => (
             <Card
               key={item.id}
+              id={item.id}
               title={item.title ? item.title : item.original_name}
               release_date={
                 item.release_date ? item.release_date : item.first_air_date
