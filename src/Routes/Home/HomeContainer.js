@@ -12,9 +12,15 @@ export default () => {
   const getData = async () => {
     console.log("asdf");
     try {
-      const nowPlaying = await movie.nowPlaying();
-      const upcoming = await movie.upcoming();
-      const popular = await movie.popular();
+      const {
+        data: { results: nowPlaying }
+      } = await movie.nowPlaying();
+      const {
+        data: { results: upcoming }
+      } = await movie.upcoming();
+      const {
+        data: { results: popular }
+      } = await movie.popular();
       setnowPlaying(nowPlaying);
       setUpcoming(upcoming);
       setPopular(popular);
