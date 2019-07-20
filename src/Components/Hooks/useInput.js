@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-export default ({ defaultValue }) => {
-  const [value, setValue] = useState(defaultValue);
+export default ({ type = "text" }) => {
+  const [value, setValue] = useState("");
   const onChange = e => {
-    console.log(e.target.value);
+    setValue(e.target.value);
   };
 
-  return { value, onChange };
+  return { value, onChange, type, setValue };
 };
