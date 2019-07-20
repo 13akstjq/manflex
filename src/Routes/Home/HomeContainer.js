@@ -3,9 +3,9 @@ import HomePresenter from "./HomePresenter";
 import { movie } from "../../Components/api";
 
 export default () => {
-  const [nowPlaying, setnowPlaying] = useState("");
-  const [upcoming, setUpcoming] = useState("");
-  const [popular, setPopular] = useState("");
+  const [nowPlaying, setnowPlaying] = useState([]);
+  const [upcoming, setUpcoming] = useState([]);
+  const [popular, setPopular] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 

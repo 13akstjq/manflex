@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import TVPresenter from "./TVPresenter";
 import { tv } from "../../Components/api";
 export default () => {
-  const [airingToday, setAiringToday] = useState("");
-  const [topRated, setTopRated] = useState("");
-  const [popular, setPopular] = useState("");
+  const [airingToday, setAiringToday] = useState([]);
+  const [topRated, setTopRated] = useState([]);
+  const [popular, setPopular] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
