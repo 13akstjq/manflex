@@ -17,7 +17,6 @@ const appendConfig = {
     append_to_response: "videos"
   }
 };
-console.log(appendConfig);
 const searchConfig = term => {
   return {
     ...config,
@@ -27,7 +26,6 @@ const searchConfig = term => {
     }
   };
 };
-console.log(searchConfig("hello"));
 export const tv = {
   airingToday: () => axios.get("tv/airing_today", config),
   popular: () => axios.get("tv/popular", config),
@@ -36,10 +34,9 @@ export const tv = {
   search: term => axios.get("search/tv", searchConfig(term))
 };
 export const movie = {
-  nowPlaying: () => axios.get("movie/upcoming", config),
-  topRated: () => axios.get("movie/top_rated", config),
+  nowPlaying: () => axios.get("movie/now_playing", config),
+  upcoming: () => axios.get("movie/upcoming", config),
   popular: () => axios.get("movie/popular", config),
   movieDetail: id => axios.get(`movie/${id}`, appendConfig),
   search: term => axios.get("search/movie", searchConfig(term))
 };
-export default movie.search("hello");
