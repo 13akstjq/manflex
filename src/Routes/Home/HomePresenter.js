@@ -3,8 +3,10 @@ import styled from "styled-components";
 import Loader from "../../Components/Loader";
 import PropTypes from "prop-types";
 import Section from "../../Components/Section";
-
-const Wrapper = styled.div``;
+import { Helmet } from "react-helmet";
+const Wrapper = styled.div`
+  padding: 30px;
+`;
 
 const HomePresenter = ({ nowPlaying, upcoming, popular, loading, error }) => {
   if (loading) {
@@ -12,6 +14,9 @@ const HomePresenter = ({ nowPlaying, upcoming, popular, loading, error }) => {
   } else {
     return (
       <Wrapper>
+        <Helmet>
+          <title>Movies | MANFLEX</title>
+        </Helmet>
         <Section title="nowPlaying" children={nowPlaying} />
         <Section title="popular" children={popular} />
         <Section title="upcoming" children={upcoming} />

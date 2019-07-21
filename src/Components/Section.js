@@ -3,10 +3,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import Card from "./Card";
 
-const Wrapper = styled.div`
-  margin-top: 30px;
-  margin-left: 30px;
-`;
+const Wrapper = styled.div``;
 
 const Title = styled.div`
   font-size: 20px;
@@ -16,8 +13,7 @@ const Title = styled.div`
 
 const ContentList = styled.div`
   display: grid;
-
-  grid-template-columns: repeat(11, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-auto-rows: 250px;
   margin-bottom: 50px;
   grid-gap: 20px;

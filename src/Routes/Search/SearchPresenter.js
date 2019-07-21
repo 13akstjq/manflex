@@ -3,14 +3,15 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import Section from "../../Components/Section";
 import Loader from "../../Components/Loader";
-
+import { Helmet } from "react-helmet";
 const Wrapper = styled.div`
   display: grid;
+  padding: 5px 30px;
 `;
 
 const Input = styled.input`
   height: 80px;
-  padding: 3px 30px;
+  padding: 3px;
   font-size: 30px;
   width: 100%;
   border: none;
@@ -37,6 +38,9 @@ const SearchPresenter = ({
   console.log(loading, movieResults, tvResults);
   return (
     <Wrapper>
+      <Helmet>
+        <title>Search | MANFLEX</title>
+      </Helmet>
       <form onSubmit={onSubmit}>
         <Input
           placeholder="Search Movies or TV Shows"

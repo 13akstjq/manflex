@@ -3,8 +3,10 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import Section from "../../Components/Section";
 import Loader from "../../Components/Loader";
-
-const Wrapper = styled.div``;
+import { Helmet } from "react-helmet";
+const Wrapper = styled.div`
+  padding: 30px;
+`;
 
 const TVPresenter = ({ airingToday, topRated, popular, loading }) => {
   if (loading) {
@@ -12,6 +14,9 @@ const TVPresenter = ({ airingToday, topRated, popular, loading }) => {
   } else {
     return (
       <Wrapper>
+        <Helmet>
+          <title>TV Shows | MANFLEX</title>
+        </Helmet>
         <Section title="airingToday" children={airingToday} isMovie={false} />
         <Section title="topRated" children={topRated} isMovie={false} />
         <Section title="popular" children={popular} isMovie={false} />
