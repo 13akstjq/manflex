@@ -42,16 +42,25 @@ const ReleaseYear = styled.div`
   color: rgba(255, 255, 255, 0.6);
 `;
 
-const Card = ({ title, release_date, vote_average, poster_path, id }) => {
+const Card = ({
+  title,
+  release_date,
+  vote_average,
+  poster_path,
+  id,
+  isMovie
+}) => {
   const releaseYear = release_date.split("-");
   return (
     <Wrapper>
-      {/* <Link to={`/search/${id}`}> */}
       <ImgContainer>
-        <Poster img={`https://image.tmdb.org/t/p/original/${poster_path}`} />
-        <Rank>⭐️ {vote_average}</Rank>
+        <Link to={isMovie ? `movie/${id}` : `tv/${id}`}>
+          <Poster img={`https://image.tmdb.org/t/p/original/${poster_path}`} />
+          <Rank>
+            <span role="img">⭐️</span> {vote_average}
+          </Rank>
+        </Link>
       </ImgContainer>
-      {/* </Link> */}
       <Title>{title}</Title>
       <ReleaseYear>{releaseYear[0]}</ReleaseYear>
     </Wrapper>

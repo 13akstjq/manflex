@@ -23,7 +23,7 @@ const ContentList = styled.div`
   grid-gap: 20px;
 `;
 
-const Section = ({ title, children }) => {
+const Section = ({ title, children, isMovie = true }) => {
   return (
     <Wrapper>
       <Title>{title}</Title>
@@ -40,6 +40,7 @@ const Section = ({ title, children }) => {
               }
               poster_path={item.poster_path}
               vote_average={item.vote_average}
+              isMovie={isMovie}
             />
           ))}
       </ContentList>

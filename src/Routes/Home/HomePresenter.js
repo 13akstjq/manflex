@@ -7,7 +7,6 @@ import Section from "../../Components/Section";
 const Wrapper = styled.div``;
 
 const HomePresenter = ({ nowPlaying, upcoming, popular, loading, error }) => {
-  console.log(nowPlaying, upcoming, popular, loading, error);
   if (loading) {
     return <Loader />;
   } else {

@@ -36,7 +36,6 @@ export default ({ history }) => {
       onSubmit={onSubmit}
       movieResults={movieResults}
       tvResults={tvResults}
-      error={error}
     />
   );
 };

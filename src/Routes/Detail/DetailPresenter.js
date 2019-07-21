@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-const DetailPresenter = ({ showDetail, movieDetail, loading, error }) => {
+const DetailPresenter = ({ detail, loading, error }) => {
+  console.log(detail);
   if (loading) {
     return "loading";
   } else {
@@ -11,8 +12,7 @@ const DetailPresenter = ({ showDetail, movieDetail, loading, error }) => {
 };
 
 DetailPresenter.propTypes = {
-  showDetail: PropTypes.object,
-  movieDetail: PropTypes.object,
+  detail: PropTypes.object,
   loading: PropTypes.bool.isRequired,
   error: PropTypes.string
 };

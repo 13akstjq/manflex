@@ -27,12 +27,9 @@ const NotFound = styled.div`
   justify-self: center;
 `;
 
-const SectionList = styled.div``;
-
 const SearchPresenter = ({
   SearchInput,
   loading,
-  error,
   onSubmit,
   movieResults,
   tvResults

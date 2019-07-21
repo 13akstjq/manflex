@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from "react";
 import DetailPresenter from "./DetailPresenter";
-import { async } from "q";
 import { tv, movie } from "../../Components/api";
 
-export default ({ history, location, match }) => {
-  console.log(history, location, match);
-  const [showDetail, setShowDetail] = useState("");
-  const [movieDetail, setMovieDetail] = useState("");
+export default ({ location }) => {
+  const temp = location.pathname.split("/");
+  const isMovie = temp[1] === "movie" ? true : false;
+  const term = temp[2];
+  const [detail, setDetail] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  const getData = async () => {
+  const getData = async (isMovie, term) => {
+    console.log(isMovie, term);
     try {
-      const { data: showDetail } = await tv.showDetail(121);
-      const { data: movieDetail } = await movie.movieDetail(121);
-      setShowDetail(showDetail);
-      setMovieDetail(movieDetail);
+      if (isMovie) {
+        const { data: detail } = await movie.movieDetail(term);
+        setDetail(detail);
+      } else {
+        const { data: detail } = await tv.showDetail(term);
+        setDetail(detail);
+      }
     } catch (e) {
       setError(e);
     } finally {
@@ -24,14 +28,7 @@ export default ({ history, location, match }) => {
   };
 
   useEffect(() => {
-    getData();
+    getData(isMovie, term);
   }, []);
-  return (
-    <DetailPresenter
-      showDetail={showDetail}
-      movieDetail={movieDetail}
-      loading={loading}
-      error={error}
-    />
-  );
+  return <DetailPresenter detail={detail} loading={loading} error={error} />;
 };

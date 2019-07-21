@@ -10,7 +10,6 @@ export default () => {
   const [error, setError] = useState("");
 
   const getData = async () => {
-    console.log("asdf");
     try {
       const {
         data: { results: nowPlaying }

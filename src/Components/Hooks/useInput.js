@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default ({ type = "text" }) => {
   const [value, setValue] = useState("");
