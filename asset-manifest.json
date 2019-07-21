@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/manflex/static/js/main.6ae31488.chunk.js",
+    "main.js.map": "/manflex/static/js/main.6ae31488.chunk.js.map",
+    "runtime~main.js": "/manflex/static/js/runtime~main.8e50abbd.js",
+    "runtime~main.js.map": "/manflex/static/js/runtime~main.8e50abbd.js.map",
+    "static/js/2.232be154.chunk.js": "/manflex/static/js/2.232be154.chunk.js",
+    "static/js/2.232be154.chunk.js.map": "/manflex/static/js/2.232be154.chunk.js.map",
+    "index.html": "/manflex/index.html",
+    "precache-manifest.a5ea92584c36583474ed52ff7bcfe841.js": "/manflex/precache-manifest.a5ea92584c36583474ed52ff7bcfe841.js",
+    "service-worker.js": "/manflex/service-worker.js"
+  }
+}
